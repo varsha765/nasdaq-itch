@@ -749,7 +749,7 @@ def parse_file(file_name):
                 stock_map[key]['cum_price_vol'] += (curr_price * curr_vol)
                 stock_map[key]['vol'] += curr_vol
                 if stock_map[key]['vol'] != 0:
-                    vwap[key] = (curr_hour, round(stock_map[key]['cum_price_vol'] / stock_map[key]['vol'], 4))
+                    vwap[key] = (round(stock_map[key]['cum_price_vol'] / stock_map[key]['vol'], 4))
 
             if curr_hour is not None and 'Timestamp' in parsed_message and curr_hour != parsed_message['Timestamp'][:2]:
                 print('vwap at ', curr_hour, vwap)

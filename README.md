@@ -13,5 +13,5 @@ The parser will parse different message types and output the vwap for each secur
 It also keeps a counter on number of messages that have been parsed so far.
 
 ### <u>**Output**</u>
-The output is present in vwap.txt which contains vwap for each security at every hour. The format for storing is a python dictionary where the key is the stock name and value is a tuple with two elements, the hour and the vwap value.
+The output is present in vwap.txt which contains vwap for each security at every hour. The format for storing is a python dictionary where the key is the stock name and value is the vwap value for that stock.
 

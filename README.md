@@ -1,0 +1,1 @@
+Welcome to the NASDAQ ITCH Parser and VWAP Calculator project! This project aims to provide a powerful and efficient tool to parse NASDAQ ITCH data and calculate the Volume-Weighted Average Price (VWAP) for trading analysis and strategies.

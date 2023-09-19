@@ -669,7 +669,7 @@ message_parser = {'S': parse_system_event_message,
                   'O': parse_direct_listing_with_capital_raise_message
                   }
 
-trade_execution_msgs = ['E', 'C']
+trade_execution_msgs = ['E', 'C', 'P', 'Q']
 order_msgs = ['A', 'F']
 system_event_msg = ['S']
 
@@ -745,9 +745,15 @@ def parse_file(file_name):
                     vwap[key] = []
 
                 curr_price = price
+                cum_price['curr_stock'] += curr_price
+                total_vol['curr_stock']+=curr_vol
                 curr_vol = shares
                 stock_map[key]['cum_price_vol'] += (curr_price * curr_vol)
                 stock_map[key]['vol'] += curr_vol
+                avg_price['curr_stock'] = cum_price['curr_stock']/num_of_transactions
+
+                #avg price
+
                 if stock_map[key]['vol'] != 0:
                     vwap[key] = (round(stock_map[key]['cum_price_vol'] / stock_map[key]['vol'], 4))
 
@@ -769,3 +775,6 @@ if __name__ == "__main__":
     parse_file(binary_itch_file)
     print('count ', count)
     print('counter ', counter)
+
+
+
